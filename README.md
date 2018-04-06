@@ -16,7 +16,7 @@ npm install -g  wepy-cli
 
 ### 2. 下载源代码
 ```bash
-git clone (https://github.com/hyruleteam/hyruleMall.git
+git clone https://github.com/hyruleteam/hyruleMall.git
 ```
 
 ### 3. 安装开发依赖

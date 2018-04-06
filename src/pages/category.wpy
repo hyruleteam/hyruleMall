@@ -1,0 +1,17 @@
+<style lang='scss'>
+
+</style>
+<template>
+  <view>
+    <text>123</text>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  export default class Category extends wepy.page {
+    data = {}
+    components = {}
+    methods = {}
+  }
+</script>

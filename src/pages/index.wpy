@@ -1,0 +1,65 @@
+<style lang='scss'>
+
+</style>
+
+<template>
+  <view class="container">
+    <zanTab :tab.sync="tab" componentId="tab"></zanTab>
+    <hyruleBanner></hyruleBanner>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import zanTab from '../components/zan-tab'
+  import hyruleBanner from '../components/hyrule-banner'
+
+  export default class Index extends wepy.page {
+    data = {
+      tab: {
+        list: [
+          {
+            id: '1',
+            title: '最新商品1'
+          },
+          {
+            id: '2',
+            title: '最新商品2'
+          },
+          {
+            id: '3',
+            title: '最新商品3'
+          },
+          {
+            id: '4',
+            title: '最新商品4'
+          },
+          {
+            id: '5',
+            title: '最新商品5'
+          },
+          {
+            id: '6',
+            title: '最新商品6'
+          }
+        ],
+        scroll: true,
+        height: 44,
+      }
+    }
+    components = {
+      zanTab: zanTab,
+      hyruleBanner: hyruleBanner,
+    }
+    methods = {}
+    onLoad() {
+      wepy.getSystemInfo().then(data => {
+        if (data.SDKVersion < '1.4.0') {
+          wepy.showModal({
+            content: `SDKVersion最低要求1.4.0，当前版本${data.SDKVersion}`,
+            title: '微信版本过低'
+          })
+        }
+      })
+    }
+  }
+</script>

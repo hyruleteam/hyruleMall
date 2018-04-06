@@ -5,9 +5,10 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production wepy build --no-cache",
+    "dev": "cross-env NODE_ENV=development wepy build --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Bruce Xiong",
+  "author": "andyxic",
   "license": "ISC",
   "dependencies": {
     "wepy": "^1.6.0",

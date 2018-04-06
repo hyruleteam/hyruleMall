@@ -6,7 +6,6 @@
   overflow: hidden;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 15px 0;
 }
 .container::before {
   position: fixed;
@@ -18,21 +17,6 @@
   background-color: #e2e2e2;
   z-index: 5;
 }
-.doc-title {
-  position: relative;
-  padding: 15px 0;
-  margin: 10px 15px;
-  line-height: 25px;
-  font-size: 25px;
-  color: #666;
-}
-.doc-description {
-  margin: 14px 0;
-  padding: 0 15px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #666;
-}
 </style>
 
 <script>
@@ -42,41 +26,47 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'example/dashboard',
-      'example/actionsheet',
-      'example/btn',
-      'example/badge',
-      'example/capsule',
-      'example/card',
-      'example/cell',
-      'example/dialog',
-      'example/field',
-      'example/helper',
-      'example/icon',
-      'example/layout',
-      'example/loadmore',
-      'example/noticebar',
-      'example/panel',
-      'example/popup',
-      'example/select',
-      'example/stepper',
-      'example/steps',
-      'example/switch',
-      'example/tab',
-      'example/tag',
-      'example/toptips',
-      'example/toast'
+      'pages/index',
+      'pages/category',
+      'pages/car',
+      'pages/myCenter',
     ],
+    tabBar: {
+      color: '#666',
+      selectedColor: '#b4282d',
+      backgroundColor: '#fff',
+      list: [{
+        text: '首页',
+        pagePath: 'pages/index',
+        iconPath: 'images/index.png',
+        selectedIconPath: 'images/index_selected.png',
+      }, {
+        text: '分类',
+        pagePath: 'pages/category',
+        iconPath: 'images/category.png',
+        selectedIconPath: 'images/category_selected.png',
+      }, {
+        text: '购物车',
+        pagePath: 'pages/car',
+        iconPath: 'images/car.png',
+        selectedIconPath: 'images/car_selected.png',
+      }, {
+        text: '我',
+        pagePath: 'pages/myCenter',
+        iconPath: 'images/person.png',
+        selectedIconPath: 'images/person_selected.png',
+      }
+      ]
+    },
     window: {
-      navigationBarBackgroundColor: '#FAFAFA',
-      navigationBarTitleText: 'ZanUI-Wepy',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: '海拉鲁商城',
       navigationBarTextStyle: 'black',
       backgroundTextStyle: 'dark',
-      backgroundColor: '#f9f9f9'
+      backgroundColor: '#fff'
     },
     debug: true
   }
-
   constructor() {
     super()
     this.use('promisify')
