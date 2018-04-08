@@ -5,6 +5,7 @@ sftp-config.json
 log
 npm-debug.log
 .vscode
+.idea
 coverage
 lerna-debug.log
 .DS_Store
