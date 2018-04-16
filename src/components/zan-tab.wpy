@@ -79,9 +79,10 @@ export default class zanTab extends wepy.component {
   data = {}
   methods = {
     handleZanTabChange(e) {
-      let { componentId, itemId: selectedId } = e.currentTarget.dataset
-      console.info('[zan:tab:change]', { componentId, selectedId })
-      this.$emit('zanTabChange', selectedId)
+      let { itemId: selectedId } = e.currentTarget.dataset
+      // console.log(e.currentTarget.dataset)
+     // console.info('[zan:tab:change]', { componentId, selectedId })
+      this.$emit('tabChange', selectedId)
     }
   }
 }

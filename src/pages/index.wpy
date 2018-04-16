@@ -19,29 +19,30 @@
         list: [
           {
             id: '1',
-            title: '最新商品1'
+            title: '推荐'
           },
           {
             id: '2',
-            title: '最新商品2'
+            title: '居家'
           },
           {
             id: '3',
-            title: '最新商品3'
+            title: '配件'
           },
           {
             id: '4',
-            title: '最新商品4'
+            title: '服装'
           },
           {
             id: '5',
-            title: '最新商品5'
+            title: '电器'
           },
           {
             id: '6',
-            title: '最新商品6'
+            title: '洗护'
           }
         ],
+        selectedId: 1,
         scroll: true,
         height: 44,
       }
@@ -49,6 +50,14 @@
     components = {
       zanTab: zanTab,
       hyruleBanner: hyruleBanner,
+    }
+    events = {
+      tabChange: (selectedId, event) => {
+        console.log(event.source)
+        let { componentId } = event.source
+        this[componentId].selectedId = selectedId
+        this.$apply()
+      }
     }
     methods = {}
     onLoad() {
