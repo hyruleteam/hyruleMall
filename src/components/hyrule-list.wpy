@@ -1,0 +1,17 @@
+<style lang="scss">
+
+</style>
+<template>
+  <view>
+
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class hyruleList extends wepy.component {
+  props = {}
+  data = {}
+  methods = {}
+  events = {}
+}
+</script>

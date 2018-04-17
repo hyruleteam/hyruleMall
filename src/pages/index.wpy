@@ -6,13 +6,13 @@
   <view class="container">
     <zanTab :tab.sync="tab" componentId="tab"></zanTab>
     <hyruleBanner></hyruleBanner>
+    
   </view>
 </template>
 <script>
   import wepy from 'wepy'
   import zanTab from '../components/zan-tab'
   import hyruleBanner from '../components/hyrule-banner'
-
   export default class Index extends wepy.page {
     data = {
       tab: {
@@ -44,7 +44,6 @@
         ],
         selectedId: 1,
         scroll: true,
-        height: 44,
       }
     }
     components = {
@@ -59,7 +58,11 @@
         this.$apply()
       }
     }
-    methods = {}
+    methods = {
+      havaAjax: () => {
+        wepy.request('http://laravel.qteam.cc/api/fronted/categories/').then((d) => console.log(d))
+      }
+    }
     onLoad() {
       wepy.getSystemInfo().then(data => {
         if (data.SDKVersion < '1.4.0') {
